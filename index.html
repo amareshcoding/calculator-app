@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style/calculator.css">
-</head>
-<body>
-    <h1>CALCULATOR</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CALCULATOR</title>
+    <link rel="stylesheet" href="./calculator.css" />
+  </head>
+  <body>
+    <h1 id="heading">CALCULATOR</h1>
     <div class="calculator br">
-        <div id="display" class="display br"></div>
+      <div id="display" class="display br"></div>
 
-        <div class="buttons-container">
-            <button onclick="runCalculatorOperation(`add`)" class="bgc1 br">+</button>
-            <button onclick="runCalculatorOperation(`sub`)" class="bgc1 br">-</button>
-            <button onclick="runCalculatorOperation(`mul`)" class="bgc1 br">×</button>
-            <button onclick="runCalculatorOperation(`dvd`)" class="bgc1 br">÷</button>
-            <button onclick="runCalculator(7)" class="bgc2 br">7</button>
-            <button onclick="runCalculator(8)" class="bgc2 br">8</button>
-            <button onclick="runCalculator(9)" class="bgc2 br">9</button>
-            <button onclick="runCalculatorForEql()" class="bgc3 br">=</button>
-            <button onclick="runCalculator(4)" class="bgc2 br">4</button>
-            <button onclick="runCalculator(5)" class="bgc2 br">5</button>
-            <button onclick="runCalculator(6)" class="bgc2 br">6</button>
-            <button onclick="runCalculator(1)" class="bgc2 br">1</button>
-            <button onclick="runCalculator(2)" class="bgc2 br">2</button>
-            <button onclick="runCalculator(3)" class="bgc2 br">3</button>
-            <button onclick="runCalculatorForDot()" class="bgc2 br">.</button>
-            <button onclick="runCalculator(0)" class="bgc2 br">0</button>
-            <button onclick="runCalculatorForC()" class="bgc4 br">C</button>
-        </div>
+      <div class="buttons-container">
+        <button onclick="runCalculatorOperation(`add`)" class="bgc1 br">
+          +
+        </button>
+        <button onclick="runCalculatorOperation(`sub`)" class="bgc1 br">
+          -
+        </button>
+        <button onclick="runCalculatorOperation(`mul`)" class="bgc1 br">
+          ×
+        </button>
+        <button onclick="runCalculatorOperation(`dvd`)" class="bgc1 br">
+          ÷
+        </button>
+        <button onclick="runCalculator(7)" class="bgc2 br">7</button>
+        <button onclick="runCalculator(8)" class="bgc2 br">8</button>
+        <button onclick="runCalculator(9)" class="bgc2 br">9</button>
+        <button onclick="runCalculatorForEql()" class="bgc3 br">=</button>
+        <button onclick="runCalculator(4)" class="bgc2 br">4</button>
+        <button onclick="runCalculator(5)" class="bgc2 br">5</button>
+        <button onclick="runCalculator(6)" class="bgc2 br">6</button>
+        <button onclick="runCalculator(1)" class="bgc2 br">1</button>
+        <button onclick="runCalculator(2)" class="bgc2 br">2</button>
+        <button onclick="runCalculator(3)" class="bgc2 br">3</button>
+        <button onclick="runCalculatorForDot()" class="bgc2 br">.</button>
+        <button onclick="runCalculator(0)" class="bgc2 br">0</button>
+        <button onclick="runCalculatorForC()" class="bgc4 br">C</button>
+      </div>
     </div>
-</body>
-<script src="./script/calculator.js"></script>
+  </body>
+  <script src="./calculator.js"></script>
 </html>

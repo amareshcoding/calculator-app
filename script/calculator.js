@@ -1,11 +1,31 @@
 let store = '';
 let display = document.getElementById('display');
+
+const checkLastChar = (str) => {
+  let lastChar = str.charAt(str.length - 1);
+  if (
+    lastChar === '+' ||
+    lastChar === '-' ||
+    lastChar === '*' ||
+    lastChar === '/'
+  ) {
+    return true;
+  }
+  return false;
+};
+
 const runCalculator = (n) => {
   store += n;
   display.innerText = store;
 };
+
 const runCalculatorOperation = (op) => {
-  // console.log('op: ', op);
+  if (checkLastChar(store)) {
+    store = store.split('');
+    store.pop();
+    store = store.join('');
+  }
+
   if (store.length >= 1) {
     if (op == `add`) store += '+';
     else if (op == `sub`) store += '-';
@@ -14,26 +34,26 @@ const runCalculatorOperation = (op) => {
     display.innerText = store;
   }
 };
+
 const runCalculatorForDot = () => {
+  if (checkLastChar(store)) {
+    return;
+  }
   store += '.';
   display.innerText = store;
 };
-const runCalculatorForEql = () => {
-  // let resArr = store.split(' ');
 
-  // if (resArr[1] == '+') store = +resArr[0] + +resArr[2];
-  // if (resArr[1] == '-') store = resArr[0] - resArr[2];
-  // if (resArr[1] == '×') store = resArr[0] * resArr[2];
-  // if (resArr[1] == '÷') store = resArr[0] / resArr[2];
+const runCalculatorForEql = () => {
+  if (checkLastChar(store)) {
+    return;
+  }
 
   let ans = eval(store);
   store = ans.toString();
   display.innerText = store;
 };
+
 const runCalculatorForC = () => {
   display.innerText = null;
   store = '';
 };
-// let v = '1+9*6-2*10';
-// console.log(eval(v))
-// console.log(eval('9/3'));
