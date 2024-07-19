@@ -8,9 +8,27 @@ const checkLastChar = (str) => {
     lastChar === '-' ||
     lastChar === '*' ||
     lastChar === '/'
-  ) {
+  )
     return true;
+
+  return false;
+};
+
+const checkLastCharDot = (str) => {
+  let countDot = 0;
+  for (let i = str.length - 1; i >= 0; i++) {
+    if (str[i] === '.') countDot++;
+    else if (
+      lastChar === '+' ||
+      lastChar === '-' ||
+      lastChar === '*' ||
+      lastChar === '/'
+    )
+      break;
   }
+
+  let lastChar = str.charAt(str.length - 1);
+  if (str.length === 0 || lastChar === '.' || countDot > 0) return true;
   return false;
 };
 
@@ -36,11 +54,9 @@ const runCalculatorOperation = (op) => {
 };
 
 const runCalculatorForDot = () => {
-  if (checkLastChar(bag)) {
-    return;
-  } else if (bag.length === 0) {
-    return;
-  }
+  if (checkLastChar(bag)) return;
+  else if (checkLastCharDot(bag)) return;
+
   bag += '.';
   display.innerText = bag;
 };
