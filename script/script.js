@@ -17,17 +17,12 @@ const checkLastChar = (str) => {
 const checkLastCharDot = (str) => {
   let countDot = 0;
   for (let i = str.length - 1; i >= 0; i++) {
-    if (str[i] === '.') countDot++;
-    else if (
-      lastChar === '+' ||
-      lastChar === '-' ||
-      lastChar === '*' ||
-      lastChar === '/'
-    )
+    const char = str[i];
+    if (char === '.') countDot++;
+    else if (char === '+' || char === '-' || char === '*' || char === '/')
       break;
   }
 
-  let lastChar = str.charAt(str.length - 1);
   if (str.length === 0 || lastChar === '.' || countDot > 0) return true;
   return false;
 };
