@@ -16,7 +16,7 @@ const checkLastChar = (str) => {
 
 const checkLastCharDot = (str) => {
   let countDot = 0;
-  for (let i = str.length - 1; i >= 0; i++) {
+  for (let i = str.length - 1; i >= 0; i--) {
     const char = str[i];
     if (char === '.') countDot++;
     else if (char === '+' || char === '-' || char === '*' || char === '/')
