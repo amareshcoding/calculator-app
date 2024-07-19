@@ -1,4 +1,4 @@
-let store = '';
+let bag = '';
 let display = document.getElementById('display');
 
 const checkLastChar = (str) => {
@@ -15,45 +15,47 @@ const checkLastChar = (str) => {
 };
 
 const runCalculator = (n) => {
-  store += n;
-  display.innerText = store;
+  bag += n;
+  display.innerText = bag;
 };
 
 const runCalculatorOperation = (op) => {
-  if (checkLastChar(store)) {
-    store = store.split('');
-    store.pop();
-    store = store.join('');
+  if (checkLastChar(bag)) {
+    bag = bag.split('');
+    bag.pop();
+    bag = bag.join('');
   }
 
-  if (store.length >= 1) {
-    if (op == `add`) store += '+';
-    else if (op == `sub`) store += '-';
-    else if (op == 'mul') store += '*';
-    else if (op == 'dvd') store += '/';
-    display.innerText = store;
+  if (bag.length >= 1) {
+    if (op == `add`) bag += '+';
+    else if (op == `sub`) bag += '-';
+    else if (op == 'mul') bag += '*';
+    else if (op == 'dvd') bag += '/';
+    display.innerText = bag;
   }
 };
 
 const runCalculatorForDot = () => {
-  if (checkLastChar(store)) {
+  if (checkLastChar(bag)) {
+    return;
+  } else if (bag.length === 0) {
     return;
   }
-  store += '.';
-  display.innerText = store;
+  bag += '.';
+  display.innerText = bag;
 };
 
 const runCalculatorForEql = () => {
-  if (checkLastChar(store)) {
+  if (checkLastChar(bag)) {
     return;
   }
 
-  let ans = eval(store);
-  store = ans.toString();
-  display.innerText = store;
+  let ans = eval(bag);
+  bag = ans.toString();
+  display.innerText = bag;
 };
 
 const runCalculatorForC = () => {
   display.innerText = null;
-  store = '';
+  bag = '';
 };
